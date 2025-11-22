@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm build:vercel",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "framework": null,
+  "outputDirectory": "dist/public",
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/trpc/(.*)",
+      "destination": "/api/trpc/$1"
+    },
+    {
+      "source": "/api/health",
+      "destination": "/api/health"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "GROQ_API_KEY": "@groq_api_key",
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production",
+      "DATABASE_URL": "@database_url",
+      "GROQ_API_KEY": "@groq_api_key"
+    }
+  }
+}

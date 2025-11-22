@@ -1,0 +1,4 @@
+crewai>=0.70.0
+crewai-tools>=0.0.1
+groq>=0.4.0
+litellm>=1.0.0
