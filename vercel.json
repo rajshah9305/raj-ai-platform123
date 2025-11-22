@@ -24,16 +24,9 @@
       "destination": "/index.html"
     }
   ],
-  "env": {
-    "DATABASE_URL": "@database_url",
-    "GROQ_API_KEY": "@groq_api_key",
-    "NODE_ENV": "production"
-  },
   "build": {
     "env": {
-      "NODE_ENV": "production",
-      "DATABASE_URL": "@database_url",
-      "GROQ_API_KEY": "@groq_api_key"
+      "NODE_ENV": "production"
     }
   }
 }
